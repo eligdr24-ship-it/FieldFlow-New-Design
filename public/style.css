@@ -31,3 +31,42 @@ h1,h2,h3,h4,.logo,.sectionHeader h1,.sectionHeader h2,.heroPanel h1{font-family:
 .rating{background:#eef4ff;color:#2563eb}.jobs{background:#dcfce7;color:#15803d}.time{background:#f1f5f9}.emergency{background:#ffedd5;color:#c2410c}
 .sendBtn{background:#0f63ff;color:#fff;border:0;border-radius:12px;padding:14px 22px;font-weight:800}
 .mapPanel img{width:100%;border-radius:18px}
+
+/* V4.1 UX fix: technician cards that fit cleanly on desktop + mobile */
+.techCards{display:grid!important;grid-template-columns:1fr!important;gap:16px!important;max-width:100%!important}
+.techCard.proTechCard{display:grid!important;grid-template-columns:92px minmax(0,1fr) 190px!important;align-items:center!important;gap:22px!important;padding:20px 22px!important;border-radius:18px!important;margin:0!important;min-height:156px!important;overflow:hidden!important}
+.techCard.proTechCard h3{font-size:22px!important;line-height:1.15!important;margin:0 0 6px!important;letter-spacing:-.03em!important;white-space:normal!important;overflow-wrap:anywhere!important}
+.techMeta{margin:0!important;color:#667085!important;font-weight:650!important;font-size:15px!important;line-height:1.4!important}
+.techAvatar{width:82px!important;height:82px!important;border-radius:50%!important;background:linear-gradient(135deg,#eaf2ff,#c7dcff)!important;display:grid!important;place-items:center!important;flex:0 0 auto!important}
+.techAvatar span{font-size:23px!important;font-weight:900!important;color:#0f63ff!important;letter-spacing:-.04em!important}
+.proBadgeRow{display:flex!important;flex-wrap:wrap!important;gap:8px!important;margin:12px 0 10px!important}
+.proBadgeRow span{display:inline-flex!important;align-items:center!important;white-space:nowrap!important;border-radius:999px!important;padding:7px 12px!important;font-size:13px!important;line-height:1!important;font-weight:900!important;margin:0!important}
+.proBadgeRow span:nth-child(1){background:#eef4ff!important;color:#0f63ff!important}
+.proBadgeRow span:nth-child(2){background:#dcfce7!important;color:#047857!important}
+.proBadgeRow span:nth-child(3){background:#f2f4f7!important;color:#344054!important}
+.proBadgeRow span:nth-child(4){background:#fff3e6!important;color:#c2410c!important}
+.techDetails,.techDescription{margin:0!important;color:#475467!important;font-size:14px!important;line-height:1.45!important;max-width:760px!important}
+.techDetails b{color:#152033!important}.techDescription{margin-top:5px!important;color:#667085!important}
+.techActions{display:grid!important;gap:10px!important;justify-self:end!important;width:170px!important}
+.techActions .primary,.techActions .ghost{width:100%!important;min-height:46px!important;margin:0!important;padding:12px 14px!important;border-radius:12px!important;font-size:14px!important;text-align:center!important}
+.techActions .ghost{background:#fff!important;color:#152033!important;border:1px solid #d9e0ea!important;box-shadow:none!important}
+
+/* Better Publisher Dashboard map sizing so it feels like a real map panel */
+#publisher .mapMock{height:420px!important;border-radius:18px!important;background:#eef6fb!important;overflow:hidden!important}
+#publisher .realMap:before{opacity:.95!important}
+
+@media(max-width:900px){
+ .techCard.proTechCard{grid-template-columns:70px minmax(0,1fr)!important;gap:14px!important;padding:17px!important;min-height:auto!important}
+ .techActions{grid-column:1 / -1!important;width:100%!important;display:grid!important;grid-template-columns:1fr 1fr!important;justify-self:stretch!important;margin-top:4px!important}
+ .techCard.proTechCard h3{font-size:19px!important}
+ .techMeta{font-size:14px!important}.techAvatar{width:64px!important;height:64px!important}.techAvatar span{font-size:18px!important}
+ #publisher .mapMock{height:340px!important}
+}
+@media(max-width:560px){
+ .techCard.proTechCard{grid-template-columns:1fr!important;gap:12px!important;padding:16px!important;border-radius:16px!important}
+ .techAvatar{width:58px!important;height:58px!important}
+ .techActions{grid-template-columns:1fr!important}
+ .proBadgeRow span{font-size:12px!important;padding:7px 10px!important}
+ .techDetails,.techDescription{font-size:13.5px!important}
+ #publisher .mapMock{height:280px!important}
+}

@@ -40,7 +40,22 @@ const trustData={
 function renderTrust(tab='availability'){$('#trustContent').innerHTML=trustData[tab];$$('.trustTabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));}
 $$('.trustTabs button').forEach(b=>b.addEventListener('click',()=>renderTrust(b.dataset.tab)));
 function renderTechCards(){
- $('#techCards').innerHTML=techs.map(t=>`<article class="techCard"><h3>${t[0]}</h3><p class="muted">${t[1]} • ${t[2]}</p><div class="badgeRow"><span>Rating ${t[3]}</span><span>${t[4]}</span><span>${t[5]}</span><span>${t[6]}</span></div><p><b>Categories:</b> ${t[7]}<br><b>ZIPs:</b> 19116, 19115, 19020, 19053</p><button class="primary" onclick="toast('Partial lead sent to ${t[0]}')">Send Lead</button> <button class="ghost" onclick="switchView('profile')">View Profile</button></article>`).join('');
+ const zipLine='19116, 19115, 19020, 19053';
+ $('#techCards').innerHTML=techs.map(t=>`<article class="techCard proTechCard">
+  <div class="techAvatar"><span>${t[1].split(' ').map(x=>x[0]).join('')}</span></div>
+  <div class="techMain">
+    <div class="techTitleRow">
+      <div>
+        <h3>${t[0]}</h3>
+        <p class="techMeta">${t[1]} • ${t[2]}</p>
+      </div>
+    </div>
+    <div class="badgeRow proBadgeRow"><span>Rating ${t[3]}</span><span>${t[4]}</span><span>${t[5]}</span><span>${t[6]}</span></div>
+    <p class="techDetails"><b>Categories:</b> ${t[7]}<br><b>ZIPs:</b> ${zipLine}</p>
+    <p class="techDescription">Reliable garage door repair crew covering Philadelphia and nearby suburbs.</p>
+  </div>
+  <div class="techActions"><button class="primary" onclick="toast('Partial lead sent to ${t[0]}')">Send Latest Lead</button><button class="ghost" onclick="switchView('profile')">View Profile</button></div>
+ </article>`).join('');
 }
 function renderFieldJobs(){
  $('#fieldJobs').innerHTML=jobs.slice(0,4).map((j,i)=>`<div class="fieldJob"><span class="status ${i===0?'paid':''}">${j[3]}</span><div><b>${j[0]}</b><small>${j[2]} • ${j[5]}</small></div><button class="ghost" onclick="toast('Job details opened')">Open</button></div>`).join('');
