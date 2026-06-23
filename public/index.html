@@ -11,9 +11,9 @@
 </head>
 <body>
   <header class="marketTop">
-    <button class="mobileMenu" id="mobileMenu">☰</button>
+    <button class="mobileMenu" id="mobileMenu" aria-label="Open menu"><span></span><span></span><span></span></button>
     <div class="logo">Field<span>Flow</span><i>.</i></div>
-    <div class="searchBar"><input placeholder="What service, job, tech, or company are you looking for today?"><button>⌕</button></div>
+    <div class="searchBar"><input placeholder="What service, job, tech, or company are you looking for today?"><button aria-label="Search">Search</button></div>
     <nav class="topLinks">
       <button data-view="discover">Explore</button>
       <button data-view="field">Field App</button>
@@ -24,22 +24,22 @@
   </header>
 
   <nav class="categoryNav" id="categoryNav">
-    <a class="active">Trending 🔥</a><a>Garage Doors</a><a>HVAC</a><a>Locksmith</a><a>Electrical</a><a>Plumbing</a><a>Cleaning</a><a>Delivery</a><a>Insurance Adjusters</a><a>Property Inspection</a><a>More ›</a>
+    <a class="active">Trending</a><a>Garage Doors</a><a>HVAC</a><a>Locksmith</a><a>Electrical</a><a>Plumbing</a><a>Cleaning</a><a>Delivery</a><a>Insurance Adjusters</a><a>Property Inspection</a><a>More ›</a>
   </nav>
 
   <main class="app">
     <aside class="sideNav" id="sideNav">
       <div class="sideProfile">
         <div class="avatar">AJ</div>
-        <div><b>Alex Admin</b><small>Garage Masters Pro</small><em>● Online</em></div>
+        <div><b>Alex Admin</b><small>Garage Masters Pro</small><em>Online</em></div>
       </div>
-      <button class="active" data-view="discover">⌕ Discover</button>
-      <button data-view="profile">★ Technician Profile</button>
-      <button data-view="publisher">▦ Publisher Dashboard</button>
-      <button data-view="field">▤ Tech Field Dashboard</button>
-      <button data-view="jobs">▣ Active Jobs</button>
-      <button data-view="network">◎ Tech Network</button>
-      <button data-view="payouts">$ Payouts</button>
+      <button class="active" data-view="discover">Discover</button>
+      <button data-view="profile">Technician Profile</button>
+      <button data-view="publisher">Publisher Dashboard</button>
+      <button data-view="field">Tech Field Dashboard</button>
+      <button data-view="jobs">Active Jobs</button>
+      <button data-view="network">Tech Network</button>
+      <button data-view="payouts">Payouts</button>
     </aside>
 
     <section class="content">
@@ -74,9 +74,9 @@
           <article class="profileMain">
             <p class="breadcrumb">Home / Garage Doors / Garage Door Repair / Spring Replacement</p>
             <h1>I will repair garage doors quickly and professionally</h1>
-            <div class="sellerLine"><div class="sellerAvatar">MJ</div><div><b>Mike Johnson</b><span class="pill">Verified Pro</span><span class="pill blue">Top Rated</span><small>1 active job in queue</small><p>★★★★★ <b>4.9</b> <u>274 reviews</u></p></div></div>
+            <div class="sellerLine"><div class="sellerAvatar">MJ</div><div><b>Mike Johnson</b><span class="pill">Verified Pro</span><span class="pill blue">Top Rated</span><small>1 active job in queue</small><p><span class="stars">★★★★★</span> <b>4.9</b> <u>274 reviews</u></p></div></div>
             <div class="clients"><b>Trusted by</b><span>Overhead Doors Inc.</span><span>Tri-State Garage</span><span>Premier Access</span></div>
-            <div class="serviceImage"><button class="arrow left">‹</button><div><h2>GARAGE DOOR<br><strong>REPAIR</strong></h2><p>FAST • RELIABLE • PROFESSIONAL</p><div class="serviceBadges"><span>Fast Response</span><span>Quality Guaranteed</span><span>Verified</span></div></div><div class="techPhoto">👨‍🔧</div><button class="arrow right">›</button></div>
+            <div class="serviceImage"><button class="arrow left">‹</button><div><h2>GARAGE DOOR<br><strong>REPAIR</strong></h2><p>FAST • RELIABLE • PROFESSIONAL</p><div class="serviceBadges"><span>Fast Response</span><span>Quality Guaranteed</span><span>Verified</span></div></div><div class="techPhoto"><span>FF</span></div><button class="arrow right">›</button></div>
             <div class="messageBubble"><div class="sellerAvatar small">MJ</div><div><b>Message Mike Johnson</b><small>Online • Avg. response time: 12 min</small></div></div>
             <section class="whiteCard"><h2>About this professional</h2><p>Experienced garage door technician covering residential and light commercial work. Specializes in springs, openers, rollers, cables, off-track doors, tune-ups, and emergency calls. Uses the FieldFlow field dashboard to upload before/after photos, invoices, and completion updates.</p></section>
           </article>
@@ -92,7 +92,13 @@
           <section class="whiteCard">
             <h1>Publisher Dashboard</h1><p class="muted">Search technicians by area, send partial lead info, and track accepted jobs.</p>
             <div class="filters"><input placeholder="Search ZIP / city / state"><select><option>All categories</option><option>Garage Doors</option><option>HVAC</option><option>Delivery</option></select><button class="primary">Search</button></div>
-            <div class="mapMock"><span>Philadelphia</span><i class="pin p1">1</i><i class="pin p2">2</i><i class="pin p3">3</i><i class="pin p4">4</i></div>
+            <div class="mapMock realMap" aria-label="Live technician coverage map">
+              <div class="mapControls"><button>+</button><button>-</button></div>
+              <span class="cityLabel center">Philadelphia</span><span class="cityLabel north">Trenton</span><span class="cityLabel west">Reading</span><span class="cityLabel south">Wilmington</span>
+              <i class="mapRoad road1"></i><i class="mapRoad road2"></i><i class="mapRoad road3"></i><i class="mapRoad road4"></i><i class="mapRoad route"></i>
+              <i class="pin p1">MJ</i><i class="pin p2">TW</i><i class="pin p3">CB</i><i class="pin p4">JD</i>
+              <div class="mapAttribution">FieldFlow Map · Live coverage</div>
+            </div>
           </section>
           <section class="whiteCard broadcastCard"><h2>Send partial lead</h2><p>Full customer name, phone, and exact address stay hidden until a tech accepts and you approve.</p><div class="leadPreview"><b>Garage Door Repair</b><span>Plano, TX 75023 · Today 2:00–4:00 PM</span><strong>Potential: $250–$500</strong></div><button class="primary" id="sendBroadcast">Send to matching techs</button><div id="broadcastResult"></div></section>
         </div>
@@ -105,7 +111,7 @@
           <section class="phoneFrame">
             <div class="phoneTop"><b>FieldFlow</b><span>9:41</span></div>
             <div class="nowCard"><small>ACTIVE JOB — NOW</small><h2>Garage Door Repair</h2><p><b>Customer:</b> Sarah Johnson</p><p><b>Address:</b> 123 Main St, Plano TX <button class="miniBtn">GPS</button></p><p><b>Issue:</b> Door off track and making loud noise.</p><div class="stepButtons"><button>Start</button><button>Arrived</button><button>Done</button></div></div>
-            <div class="uploadZone"><button>📷 Before Photos</button><button>✅ After Photos</button><button>📄 Upload Invoice</button><button>▦ Request Review QR</button></div>
+            <div class="uploadZone"><button>Before Photos</button><button>After Photos</button><button>Upload Invoice</button><button>Request Review QR</button></div>
             <div class="earnings">Current Weekly Pay <b>$1,245</b><small>7 completed and admin-marked jobs</small></div>
           </section>
           <section class="whiteCard fieldDashboard">
