@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FieldFlow / TechLink Marketplace MVP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="marketTop">
+    <button class="mobileMenu" id="mobileMenu">☰</button>
+    <div class="logo">Field<span>Flow</span><i>.</i></div>
+    <div class="searchBar"><input placeholder="What service, job, tech, or company are you looking for today?"><button>⌕</button></div>
+    <nav class="topLinks">
+      <button data-view="discover">Explore</button>
+      <button data-view="field">Field App</button>
+      <button data-view="publisher">For Publishers</button>
+      <button data-view="profile">Pro Profile</button>
+      <button class="joinBtn">Join</button>
+    </nav>
+  </header>
+
+  <nav class="categoryNav" id="categoryNav">
+    <a class="active">Trending 🔥</a><a>Garage Doors</a><a>HVAC</a><a>Locksmith</a><a>Electrical</a><a>Plumbing</a><a>Cleaning</a><a>Delivery</a><a>Insurance Adjusters</a><a>Property Inspection</a><a>More ›</a>
+  </nav>
+
+  <main class="app">
+    <aside class="sideNav" id="sideNav">
+      <div class="sideProfile">
+        <div class="avatar">AJ</div>
+        <div><b>Alex Admin</b><small>Garage Masters Pro</small><em>● Online</em></div>
+      </div>
+      <button class="active" data-view="discover">⌕ Discover</button>
+      <button data-view="profile">★ Technician Profile</button>
+      <button data-view="publisher">▦ Publisher Dashboard</button>
+      <button data-view="field">▤ Tech Field Dashboard</button>
+      <button data-view="jobs">▣ Active Jobs</button>
+      <button data-view="network">◎ Tech Network</button>
+      <button data-view="payouts">$ Payouts</button>
+    </aside>
+
+    <section class="content">
+      <section id="discover" class="view active">
+        <div class="heroPanel">
+          <div>
+            <p class="breadcrumb">Home / Field Services / Garage Doors</p>
+            <h1>Find trusted field professionals and send real jobs — without WhatsApp chaos.</h1>
+            <p>Marketplace first, operations second: discover techs, publishers, companies, active jobs, and then manage the job from accept to payment.</p>
+            <div class="heroActions"><button class="primary">Post Opportunity</button><button class="ghost">Find Technicians</button></div>
+          </div>
+          <div class="heroStats"><b>2,450</b><span>Jobs Posted</span><b>98%</b><span>Paid On Time</span></div>
+        </div>
+
+        <div class="sectionHeader"><h2>Recommended opportunities</h2><a>View all</a></div>
+        <div id="opportunityCards" class="gigGrid"></div>
+
+        <div class="twoCol">
+          <section class="whiteCard">
+            <div class="sectionHeader compact"><h2>Top technicians near you</h2><a>Browse pros</a></div>
+            <div id="proList" class="proList"></div>
+          </section>
+          <section class="whiteCard">
+            <div class="sectionHeader compact"><h2>Live field activity</h2><a>Live</a></div>
+            <div id="activityFeed" class="activityFeed"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="profile" class="view">
+        <div class="profilePage">
+          <article class="profileMain">
+            <p class="breadcrumb">Home / Garage Doors / Garage Door Repair / Spring Replacement</p>
+            <h1>I will repair garage doors quickly and professionally</h1>
+            <div class="sellerLine"><div class="sellerAvatar">MJ</div><div><b>Mike Johnson</b><span class="pill">Verified Pro</span><span class="pill blue">Top Rated</span><small>1 active job in queue</small><p>★★★★★ <b>4.9</b> <u>274 reviews</u></p></div></div>
+            <div class="clients"><b>Trusted by</b><span>Overhead Doors Inc.</span><span>Tri-State Garage</span><span>Premier Access</span></div>
+            <div class="serviceImage"><button class="arrow left">‹</button><div><h2>GARAGE DOOR<br><strong>REPAIR</strong></h2><p>FAST • RELIABLE • PROFESSIONAL</p><div class="serviceBadges"><span>Fast Response</span><span>Quality Guaranteed</span><span>Verified</span></div></div><div class="techPhoto">👨‍🔧</div><button class="arrow right">›</button></div>
+            <div class="messageBubble"><div class="sellerAvatar small">MJ</div><div><b>Message Mike Johnson</b><small>Online • Avg. response time: 12 min</small></div></div>
+            <section class="whiteCard"><h2>About this professional</h2><p>Experienced garage door technician covering residential and light commercial work. Specializes in springs, openers, rollers, cables, off-track doors, tune-ups, and emergency calls. Uses the FieldFlow field dashboard to upload before/after photos, invoices, and completion updates.</p></section>
+          </article>
+          <aside class="trustCard">
+            <div class="trustTabs"><button class="active" data-tab="availability">Availability</button><button data-tab="performance">Performance</button><button data-tab="coverage">Coverage</button></div>
+            <div id="trustContent"></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="publisher" class="view">
+        <div class="publisherGrid">
+          <section class="whiteCard">
+            <h1>Publisher Dashboard</h1><p class="muted">Search technicians by area, send partial lead info, and track accepted jobs.</p>
+            <div class="filters"><input placeholder="Search ZIP / city / state"><select><option>All categories</option><option>Garage Doors</option><option>HVAC</option><option>Delivery</option></select><button class="primary">Search</button></div>
+            <div class="mapMock"><span>Philadelphia</span><i class="pin p1">1</i><i class="pin p2">2</i><i class="pin p3">3</i><i class="pin p4">4</i></div>
+          </section>
+          <section class="whiteCard broadcastCard"><h2>Send partial lead</h2><p>Full customer name, phone, and exact address stay hidden until a tech accepts and you approve.</p><div class="leadPreview"><b>Garage Door Repair</b><span>Plano, TX 75023 · Today 2:00–4:00 PM</span><strong>Potential: $250–$500</strong></div><button class="primary" id="sendBroadcast">Send to matching techs</button><div id="broadcastResult"></div></section>
+        </div>
+        <div class="sectionHeader"><h2>Matching technicians</h2><a>View map</a></div>
+        <div id="techCards" class="techCards"></div>
+      </section>
+
+      <section id="field" class="view">
+        <div class="fieldLayout">
+          <section class="phoneFrame">
+            <div class="phoneTop"><b>FieldFlow</b><span>9:41</span></div>
+            <div class="nowCard"><small>ACTIVE JOB — NOW</small><h2>Garage Door Repair</h2><p><b>Customer:</b> Sarah Johnson</p><p><b>Address:</b> 123 Main St, Plano TX <button class="miniBtn">GPS</button></p><p><b>Issue:</b> Door off track and making loud noise.</p><div class="stepButtons"><button>Start</button><button>Arrived</button><button>Done</button></div></div>
+            <div class="uploadZone"><button>📷 Before Photos</button><button>✅ After Photos</button><button>📄 Upload Invoice</button><button>▦ Request Review QR</button></div>
+            <div class="earnings">Current Weekly Pay <b>$1,245</b><small>7 completed and admin-marked jobs</small></div>
+          </section>
+          <section class="whiteCard fieldDashboard">
+            <h1>Technician Field Dashboard</h1><p class="muted">This is the tech-side view: active job, route, uploads, status, earnings, and job history.</p>
+            <div class="fieldStats"><article><b>1</b><span>Active Job</span></article><article><b>7</b><span>Completed</span></article><article><b>$1,245</b><span>Weekly Pay</span></article></div>
+            <h2>Today’s route</h2><div id="fieldJobs" class="fieldJobs"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="jobs" class="view"><section class="whiteCard"><div class="sectionHeader compact"><h1>Active Jobs Board</h1><button class="primary" id="addLead">+ Add Lead</button></div><div id="jobsAccordion"></div></section></section>
+
+      <section id="network" class="view"><section class="whiteCard"><h1>Tech Network Marketplace</h1><p class="muted">Techs can post that they are looking for work. Companies can post employee or subcontractor positions.</p><div id="networkPosts" class="networkPosts"></div></section></section>
+
+      <section id="payouts" class="view"><section class="whiteCard"><div class="sectionHeader compact"><h1>Payout Reconciliation</h1><button class="primary">Mark Selected Paid</button></div><table id="payoutTable"></table></section></section>
+    </section>
+  </main>
+  <div id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
