@@ -64,3 +64,8 @@ function renderPayouts(){
 $('#sendBroadcast')?.addEventListener('click',()=>{$('#broadcastResult').innerHTML='<div class="success">Lead sent to 5 matching technicians. 2 accepted. Approve one to reveal full customer info.</div>';toast('Broadcast sent securely')});
 $('#addLead')?.addEventListener('click',()=>toast('New lead form opened'));
 renderOpportunities();renderPros();renderActivity();renderTrust();renderTechCards();renderFieldJobs();renderJobsAccordion();renderNetwork();renderPayouts();
+
+document.addEventListener('DOMContentLoaded',()=>{
+ const c=document.querySelector('#publisher .techList');
+ if(c){c.innerHTML=techs.map(t=>`<div class="techCard"><div class="techAvatar"></div><div class="techBody"><h3>${t[0]}</h3><div>${t[1]} • ${t[2]}</div><div class="badges"><span class="rating">★ ${t[3]}</span><span class="jobs">${t[4]}</span><span class="time">${t[5]}</span><span class="emergency">${t[6]}</span></div><p><b>Categories:</b> ${t[7]}</p></div><button class="sendBtn">Send Latest Lead</button></div>`).join('')}
+});
